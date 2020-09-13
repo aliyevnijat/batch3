@@ -15,7 +15,7 @@ public class CucumberReportBuilder {
 	public static String buildNumber = System.getProperty("buildNumber");
 	 public static void main(String[] args) {
 	 	Assert.assertTrue(generateReport().getFailedSteps() == 0);
-	}
+	 }
 
 	  /**
 	    * Generates the actual reports
