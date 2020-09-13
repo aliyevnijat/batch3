@@ -13,8 +13,8 @@ public class EtsyexplorePage implements BasePage{
     public WebElement search;
     @FindBy(how = How.CSS,using = "[class=\"etsy-icon wt-nudge-b-1\"]\n")
     public WebElement searchclick;
-//    @FindBy(how = How.CSS,using = "[class=\"wt-hide-xs wt-show-md filter-expander\"]")
-//    public WebElement Filter;
+//
+
 //    @FindBy(how = How.CSS,using = "[name=\"free_shipping\"]")
 //    public WebElement Free_Sipping_Filter;
     @FindBy(how = How.CSS,using = "[class=\"display-inline strong wt-text-caption\"]")
