@@ -17,6 +17,7 @@ public class NewCarBodyTypePage implements BasePage{
     public WebElement bodytype;
     @FindBy(how = How.CSS, using = "[class=\"text-center col-6 col-md-4\"]")
     private List<WebElement> carbodytypes;
+
     public void assertionprocess(int expected){
         Assert.assertEquals(expected,carbodytypes.size());
     }
