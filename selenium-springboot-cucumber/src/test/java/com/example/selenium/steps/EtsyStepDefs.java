@@ -5,12 +5,18 @@ import com.example.selenium.pages.EtsyHomePage;
 import com.example.selenium.runners.Hook;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import io.cucumber.java.en.*;
+import io.cucumber.java.eo.Se;
+import org.apache.velocity.runtime.directive.Parse;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -92,10 +98,71 @@ public class EtsyStepDefs {
         searchResults.get(num).click();
         Thread.sleep(2000);
         //Switching tabs
-        //switchTab(currentTab);
+        switchTab(currentTab);
         Thread.sleep(1000);
+//        etsyHomePage.addToCart.click();
+//        Thread.sleep(6000);
+    }
+
+
+    @Then("I select option number {int} from existing dropdown menu\\(s)")
+    public void i_select_option_number_from_existing_dropdown_menu_s(int  firstnum) throws InterruptedException {
+        List<WebElement> dropdowns=new ArrayList<>();
+        dropdowns.add(etsyHomePage.Color); dropdowns.add(etsyHomePage.secondDropdown);dropdowns.add(etsyHomePage.quantity);
+
+        for (int i = 0; i <dropdowns.size() ; i++) {
+          try {
+              if (hook.getWait().until(ExpectedConditions.
+                      visibilityOf(dropdowns.get(i))).isEnabled()) {
+                  Select select = new Select(dropdowns.get(i));
+                  select.selectByIndex(firstnum);
+                  Thread.sleep(1000);
+
+              }
+          }catch (TimeoutException t){
+
+          }
+        }
+        try {
+            WebDriverWait wait = new WebDriverWait(hook.getDriver(), 3);
+            wait.until(ExpectedConditions.visibilityOf(etsyHomePage.emptyfield)).sendKeys("Xiyar Adigozel");
+            Thread.sleep(1000);
+        }catch (TimeoutException t){
+
+        }
+
+
+
+
+
+//            if (dropdowns.get(i).isDisplayed()){
+//            Select select=new Select(dropdowns.get(i));
+//            select.selectByIndex(firstnum);
+//            Thread.sleep(2000);
+//            }else {
+//                continue;
+//            }
+
+
+
+
+
+//       hook.getWait().until(ExpectedConditions.
+//               visibilityOf(etsyHomePage.emptyfield)).sendKeys("Adigozel");
+
+
+
+
+
+
+//        Select select1=new Select(etsyHomePage.dropDownMenu.get(0));
+//        select1.selectByIndex(firstnum);
+//        Select select2=new Select(etsyHomePage.dropDownMenu.get(1));
+//        select2.selectByIndex(firstnum);
+//        Select select3=new Select(etsyHomePage.dropDownMenu.get(2));
+//        select3.selectByIndex(firstnum);
         etsyHomePage.addToCart.click();
-        Thread.sleep(6000);
+        Thread.sleep(2000);
     }
 
 

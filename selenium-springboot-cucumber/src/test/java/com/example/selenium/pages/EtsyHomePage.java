@@ -37,6 +37,22 @@ public class EtsyHomePage implements BasePage {
     public WebElement addToCart;
 
 
+    @FindBy(how = How.CSS, using = "[id=\"inventory-variation-select-0\"]")
+    public WebElement Color;
+
+    @FindBy(how = How.CSS, using = "[id=\"inventory-variation-select-1\"]")
+    public WebElement secondDropdown;
+
+    @FindBy(how = How.CSS, using = "[id=\"inventory-variation-select-quantity\"]")
+    public WebElement quantity;
+
+    @FindBy(how = How.CSS, using = "[id=\"personalization-input\"]")
+    public WebElement emptyfield;
+
+//    @FindBy(how = How.CSS, using = "[class=\"wt-validation wt-mb-xs-2\"]")
+//    public List<WebElement> dropDownMenu;
+
+
 
 
 
