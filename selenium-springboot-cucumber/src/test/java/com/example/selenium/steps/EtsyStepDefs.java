@@ -131,7 +131,7 @@ public class EtsyStepDefs {
         }
         try {
             WebDriverWait wait = new WebDriverWait(hook.getDriver(), 3);
-            wait.until(ExpectedConditions.visibilityOf(etsyHomePage.emptyfield)).sendKeys("Xiyar Adigozel");
+            wait.until(ExpectedConditions.visibilityOf(etsyHomePage.emptyfield)).sendKeys(" Adigozel");
             Thread.sleep(1000);
         }catch (TimeoutException t){
 
