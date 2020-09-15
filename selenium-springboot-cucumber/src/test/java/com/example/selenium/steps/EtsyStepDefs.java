@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class EtsyStepDefs {
@@ -115,8 +116,13 @@ public class EtsyStepDefs {
               if (hook.getWait().until(ExpectedConditions.
                       visibilityOf(dropdowns.get(i))).isEnabled()) {
                   Select select = new Select(dropdowns.get(i));
-                  select.selectByIndex(firstnum);
-                  Thread.sleep(1000);
+                  try {
+                      select.selectByIndex(firstnum);
+                      Thread.sleep(1000);
+                  }catch (NoSuchElementException ne){
+                      select.selectByIndex(0);
+                  }
+
 
               }
           }catch (TimeoutException t){
