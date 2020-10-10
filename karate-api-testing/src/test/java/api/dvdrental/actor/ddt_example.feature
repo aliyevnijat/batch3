@@ -4,7 +4,7 @@ Feature: Actors Data Driven
   Background:
     * configure report = { showLog: true, showAllSteps: false }
     * def jsonRequest = read('classpath:api/dvdrental/jsonFiles/actor.json')
-
+  @ddt
   Scenario Outline: Search for the actors
     Then url baseUrl + '/actor?first_name=eq.' + '<firstName>'
     And method get

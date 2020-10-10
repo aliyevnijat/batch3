@@ -12,11 +12,6 @@ public class DbUtils {
 
 	private static final Logger logger = LoggerFactory.getLogger(DbUtils.class);
 
-	public static void main(String[] args) {
-		Map<String, Object> map  = new HashMap<String, Object>();
-        DbUtils db  = new DbUtils(map);
-      
-	}
 
 	private final JdbcTemplate jdbc;
 
@@ -49,5 +44,7 @@ public class DbUtils {
 	public void delete(String query) {
 		jdbc.execute(query);
 	}
+
+
 	
 }

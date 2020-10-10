@@ -5,7 +5,7 @@ Feature: Create country and city
     * configure report = { showLog: true, showAllSteps: false }
     * def jsonCountry = read('classpath:api/dvdrental/jsonFiles/country.json')
     * def jsonCity = read('classpath:api/dvdrental/jsonFiles/city.json')
-#BREAK UNTIL 11:20 AM EST
+  @country_city
   Scenario Outline: Create country and city
     #Create country
     Given url baseUrl + '/country'
