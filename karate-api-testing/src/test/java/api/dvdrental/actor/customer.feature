@@ -53,5 +53,6 @@ Feature: CRUD
     And status 204
     Examples:
       | address          | district    | city_id | postal_code | first_name | last_name | store_id |
-      | 38 London Street | LondonDerry | 280     | 08152       | Aydan      | Memmedli  | 13       |
-#      | 56 Montreal Ave  | Florida     | 449     | 02693       | Orlando    | Steve     | 2        |
+      | 38 London Street | LondonDerry | 361     | 08152       | Aydan      | Memmedli  | 13       |
+      | 36 Nasimi Ave    | Qabala      | 322     | 70673       | Meleyke    | Haciyeva  | 2        |
+      | 52 Nizami Street | Qusar       | 576     | 63152       | Gulzar     | Huseynli  | 1        |
